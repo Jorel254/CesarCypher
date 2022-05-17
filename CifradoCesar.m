@@ -12,7 +12,8 @@ while true %WHILE PARA EL MENU DEL PROGRAMA
     close all; % CIERRA LAS IMAGENES EN USO
     fprintf("1-Cifrar texto\n"); %OPCION DEL MENU
     fprintf("2-Descifrar texto\n"); %OPCION DEL MENU
-    fprintf("3-Salir\n"); %OPCION DEL MENU
+    fprintf("3-Histograma Español/Ingles\n"); %OPCION DEL MENU
+    fprintf("4-Salir\n"); %OPCION DEL MENU
     opcion = input("Ingresa tu opcion: \n "); %CAPTURA DE LA OPCION DEL MENU
 
     switch (opcion) %SWITCH PARA LAS OPCIONES DEL MENU
@@ -107,12 +108,20 @@ while true %WHILE PARA EL MENU DEL PROGRAMA
                             end % FIN DEL IF
                         end % FIN DEL WHILE
         case 3
+                frecuency = [12.53,1.42,4.68,5.86,13.68,0.69,1.01,0.70,6.25,0.44,0.02,4.97,3.15,6.71,0.31,8.68,2.51,0.88,6.87,7.98,4.63,3.93,0.90,0.01,0.22,0.90,0.52];
+                frecuency2= [8.34,1.54,2.73,4.14,12.60,2.03,1.92,6.11,6.71,0.23,0.87,4.24,2.53,6.80,0,7.70,1.66,0.09,5.68,6.11,9.37,2.85,1.06,2.34,0.20,2.04,0.06];
+                figure
+                alfabet = categorical({'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'ñ' 'o' 'p' 'q' 'r' 's' 't' 'u' 'v' 'w' 'x' 'y' 'z'});
+                c1=[frecuency;frecuency2];
+                bar(alfabet,c1);
+                pause(3); %PAUSA PARA MOSTRAR EN PANTALLA EL RESULTADO
+        case 4
             disp('Adios');
-            pause(3); %PAUSA PARA MOSTRAR EN PANTALLA EL RESULTADO
+            pause(5); %PAUSA PARA MOSTRAR EN PANTALLA EL RESULTADO
         otherwise
             disp('Opcion no reconocida') %MENSAJE DE OPCION NO VALIDA
     end % FIN DEL SWITCH
-        if opcion == 3 %IF PARA TERMINAR EL PROGRAMA
+        if opcion == 4 %IF PARA TERMINAR EL PROGRAMA
             clear;% LIMPIA VARIABLES
             close all; % CIERRA LAS IMAGENES EN USO
             break % BREAK PARA SALIR DEL WHILE
